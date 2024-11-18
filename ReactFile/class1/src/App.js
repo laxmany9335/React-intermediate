@@ -7,7 +7,8 @@ function App() {
     email: "",
     comments: "",
     isVisible: false,
-    mode:""
+    mode:"",
+    favCar:"Thar"
   });
 
   console.log(formData);
@@ -79,24 +80,43 @@ function App() {
 
         <br/>
         <br/>
-        <input
-        type='radio'
-        name='mode'
-        value="online-mode"
-        id = "online-mode"
-        checked ={formData.mode === "online-mode"}
-        onChange={changeHandler}/>
-        <label htmlFor='online-mode'>Online Mode</label>
-        <br/>
-        <br/>
-        <input 
-        type = "radio"
-        name = "mode"
-        value='offline-mode'
-        id='offline-mode'
-        checked ={formData.mode === "offline-mode"}
-        onChange={changeHandler}/>
-        <label htmlFor='offline-mode'>Offline Mode</label>
+
+        <fieldset>
+          <legend>Mode:</legend>
+             <input
+              type='radio'
+              name='mode'
+              value="online-mode"
+              id = "online-mode"
+              checked ={formData.mode === "online-mode"}
+              onChange={changeHandler}/>
+              <label htmlFor='online-mode'>Online Mode</label>
+              <br/>
+              <br/>
+              <input 
+              type = "radio"
+              name = "mode"
+              value='offline-mode'
+              id='offline-mode'
+              checked ={formData.mode === "offline-mode"}
+              onChange={changeHandler}/>
+              <label htmlFor='offline-mode'>Offline Mode</label>
+        </fieldset>
+ 
+      <label htmlFor='favCar'>Tell me your Favourite Car</label>
+      <select 
+      name='favCar'
+      id='favCar'
+      value = {formData.favCar}
+      onChange={changeHandler}
+      >
+         <option>Scarpio</option> 
+         <option>thar</option> 
+         <option>tata</option> 
+         <option>Suzaki</option> 
+         <option>hondai</option> 
+      </select>
+  
       </form>
     </div>
   );
