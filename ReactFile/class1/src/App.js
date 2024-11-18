@@ -21,9 +21,14 @@ function App() {
     }));
   }
 
+  function submitHandler(event){
+    event.preventDefault();
+    console.log("Final Submit form ");
+    console.log(formData);
+  }
   return (
     <div className="App">
-      <form>
+      <form onSubmit={submitHandler}>
         <label htmlFor="firstName">First Name:</label>
         <input
           type="text"
@@ -116,7 +121,9 @@ function App() {
          <option>Suzaki</option> 
          <option>hondai</option> 
       </select>
-  
+      <br/>
+      <br/> 
+      <button>Sumbit</button>
       </form>
     </div>
   );
