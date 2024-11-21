@@ -8,6 +8,7 @@ import Dashboard from './page/Dashboard';
 import React, { useState, useEffect } from 'react';
 import { filterData, apiUrl } from './page/data';
 import { toast, ToastContainer } from 'react-toastify';
+import Contact from './page/Contact';
 
 function App() {
   const [loading, setLoader] = useState(true);
@@ -41,7 +42,7 @@ function App() {
             courses={courses} category={category} setCategory={setCategory}
             loading = {loading} 
             /> }/>
-
+          <Route path ="contact" element ={<Contact/>}/>
 
            <Route path = "login"  element = {<Login/>} />
            <Route path = "/signup" element = {<SignUp/>} />

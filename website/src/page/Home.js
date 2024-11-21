@@ -14,7 +14,7 @@ function Home(props) {
   return (
     <div className='justify-center items-center'>
      <div>
-        <Navbar /> 
+        {/* <Navbar />  */}
       </div>
         <div>
             <Filter filterData={filterData} category={category} setCategory={setCategory} /> 
