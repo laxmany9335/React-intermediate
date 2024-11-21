@@ -7,14 +7,14 @@ function Navbar(props) {
   let setIsloggedIn = props.setIsloggedIn;
 
   return (
-    <div className='flex justify-evenly'>
+    <div className='flex justify-evenly bg-[#152561] text-2xl pt-3 pb-3 font-bold text-white'>
           <Link to = "/">
                <img src= {logo} alt='Logo' width={160} height={32} loading='lazy' />
           </Link>
 
           <nav>
               
-              <ul className='flex gap-3'>
+              <ul className='flex  gap-3 ml-5'>
                  <li>
                    <Link to = "/" > Home</Link>
                  </li>
