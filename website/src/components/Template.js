@@ -5,8 +5,8 @@ import frameImage from '../assest/frame.png'; // Ensure correct path and file ex
 import { FcGoogle } from "react-icons/fc";
 function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
   return (
-    <div className='flex w-11/12 max-w-[1160px] mx-auto gap-x-12 gap-y-0'>
-      <div >
+    <div className='flex w-11/12 max-w-[1160px] justify-between py-10 mx-auto gap-x-12 gap-y-0'>
+      <div className='w-11/12 max-w-[450px]' >
         <h1 className='text-white font-semibold text-[1.875rem] leading-[2.73rem]'>{title}</h1>
         <p className=' flex flex-col text-[1.125rem] leading-[1.624rem] mt-4 '>
           <span className='text-[#d8e2e6]'>{desc1}</span>
@@ -41,7 +41,7 @@ function Template({ title, desc1, desc2, image, formtype, setIsLoggedIn }) {
           height={558}
           width={490}
           loading="lazy"
-          className=""
+          className="absolute -top-2 right-1"
         />
       </div>
     </div>

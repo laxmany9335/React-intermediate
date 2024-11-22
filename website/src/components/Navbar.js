@@ -31,7 +31,7 @@ function Navbar(props) {
 
                    { !isLoggedIn &&
                     <Link to = "/login">
-                      <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2'>
+                      <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2'>
                         Login
                       </button>
                     </Link>
@@ -39,15 +39,15 @@ function Navbar(props) {
 
                     { !isLoggedIn &&
                     <Link to = "/signup"> 
-                    <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2'>
-                      Sign Up
+                    <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2'>
+                      Sign up
                     </button>
                     </Link>
                    }
 
                     { isLoggedIn &&
                     <Link to = "/">
-                       <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2' onClick={()=>{
+                       <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2' onClick={()=>{
                           setIsloggedIn(false);
                           toast.success("Logged Out")
                           }}>
@@ -58,7 +58,7 @@ function Navbar(props) {
                    
                    { isLoggedIn &&
                     <Link to = "/dashboard">
-                      <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2'>
+                      <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2'>
                          Dashboard
                       </button>
                     </Link>

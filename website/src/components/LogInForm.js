@@ -25,11 +25,11 @@ function LogInForm({setIsLoggedIn}) {
     navigate("/dashboard");
 }
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className="flex flex-col w-full gap-y-4 mt-6 ">
       {/* Email Field */}
-      <label>
-        <p>
-          Email Address <sup>*</sup>
+      <label className="w-full">
+        <p className="text-[0.875rem] text-[#ced2d9] mb-1 leading-[1.35rem]">
+          Email Address <sup className="text-[#f50505]">*</sup>
         </p>
         <input
           required
@@ -38,15 +38,16 @@ function LogInForm({setIsLoggedIn}) {
           onChange={changeHandler}
           placeholder="Enter your email"
           name="email"
+          className="bg-[#6c9db8] w-full rounded-[0.5rem] text-white p-[10px]"
         />
       </label>
 
       {/* Password Field */}
-      <label>
-        <p>
-          Password <sup>*</sup>
+      <label className="w-full relative">
+        <p className="text-[0.875rem] text-[#ced2d9] mb-1 leading-[1.35rem]">
+          Password <sup className="text-[#f50505]">*</sup>
         </p>
-        <div>
+        <div >
           <input
             required
             type={showPassword ? "text" : "password"}
@@ -54,20 +55,26 @@ function LogInForm({setIsLoggedIn}) {
             onChange={changeHandler}
             placeholder="Enter your password"
             name="password"
+             className="bg-[#6c9db8] w-full rounded-[0.5rem] text-white p-[10px]"
           />
           <span
             onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-4 top-[42px] cursor-pointer "
           >
-            {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+            {showPassword ? <AiOutlineEye fontSize={24} fill="#5c6e6a" /> : <AiOutlineEyeInvisible  fontSize={24} fill="#5c6e6a" />}
           </span>
         </div>
-        <Link to="/forgot-password">
-          Forgot Password?
+        <Link to="#">
+           <p className="text-xs text-[#0a5fc7] mt-1 max-w-max ml-auto">
+             Forgot Password?
+           </p>
         </Link>
       </label>
 
       {/* Submit Button */}
-      <button type="submit">Sign In</button>
+      <button type="submit"
+      className="bg-yellow-500 rounded-[8px] font-medium text-black-500 px-[12px] py-[8px]"
+      >Sign In</button>
     </form>
   );
 }
