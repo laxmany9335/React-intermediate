@@ -31,7 +31,7 @@ function Navbar(props) {
 
                    { !isLoggedIn &&
                     <Link to = "/login">
-                      <button>
+                      <button >
                         Login
                       </button>
                     </Link>

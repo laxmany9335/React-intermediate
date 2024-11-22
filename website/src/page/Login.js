@@ -1,8 +1,15 @@
 import React from 'react'
-
-function Login() {
+import Template from '../components/Template'
+import loginImg from '../assest/login.png'
+function Login({setIsLoggedIn}) {
   return (
-    <div className='justify-center items-center'>Login</div>
+  <Template
+    title="Welcome Back"
+    desc1= "Build skills for today, tomorrow, and beyond."
+    desc2= "Education to future-proof your career"
+    image={loginImg}
+    setIsLoggedIn={setIsLoggedIn}
+  />
   )
 }
 
