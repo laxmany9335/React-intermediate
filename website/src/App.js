@@ -32,7 +32,7 @@ function App() {
   
   const [isLoggedIn, setIsloggedIn] = useState(false);
   return (
-    <div className="App">
+    <div className="bg-[#1f374f] flex flex-col">
         <Navbar isLoggedIn = {isLoggedIn} setIsloggedIn = {setIsloggedIn} />
       
         <Routes>

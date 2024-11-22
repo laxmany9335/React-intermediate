@@ -14,11 +14,11 @@ function Navbar(props) {
 
           <nav>
               
-              <ul className='flex  gap-3'>
-                 <li>
+              <ul className='flex  gap-4'>
+                 <li >
                    <Link to = "/" > Home</Link>
                  </li>
-                 <li>
+                 <li >
                    <Link to = "/about" > About</Link>
                  </li>
                  <li>
@@ -27,11 +27,11 @@ function Navbar(props) {
               </ul>
           </nav>
 
-          <div className='flex ml-5 mr-5 gap-5'>
+          <div className='flex items-center gap-x-4'>
 
                    { !isLoggedIn &&
                     <Link to = "/login">
-                      <button>
+                      <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2'>
                         Login
                       </button>
                     </Link>
@@ -39,7 +39,7 @@ function Navbar(props) {
 
                     { !isLoggedIn &&
                     <Link to = "/signup"> 
-                    <button>
+                    <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2'>
                       Sign Up
                     </button>
                     </Link>
@@ -47,7 +47,7 @@ function Navbar(props) {
 
                     { isLoggedIn &&
                     <Link to = "/">
-                       <button onClick={()=>{
+                       <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2' onClick={()=>{
                           setIsloggedIn(false);
                           toast.success("Logged Out")
                           }}>
@@ -58,7 +58,7 @@ function Navbar(props) {
                    
                    { isLoggedIn &&
                     <Link to = "/dashboard">
-                      <button>
+                      <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2'>
                          Dashboard
                       </button>
                     </Link>
