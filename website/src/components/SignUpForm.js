@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-
-function SignUpForm() {
+import {toast} from "react-hot-toast"
+import { useNavigate } from "react-router-dom";
+function SignUpForm({setIsLoggedIn}) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -11,7 +12,7 @@ function SignUpForm() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   function changeHandler(event) {
     setFormData((prevData) => ({
       ...prevData,
@@ -19,6 +20,16 @@ function SignUpForm() {
     }));
   }
 
+  function submitHandler(event){
+    event.preventDefault();
+    if(formData.password != formData.confirmPassword){
+        toast.error("Passwords don't Match");
+    }
+    setIsLoggedIn(true);
+    toast.success("Sign up Successful");
+    navigate("/");
+  
+  }
   return (
     <div>
       {/* Role Selection */}
@@ -28,7 +39,7 @@ function SignUpForm() {
       </div>
 
       {/* Form */}
-      <form>
+      <form onSubmit={submitHandler}>
         {/* Name Fields */}
         <div>
           <label>

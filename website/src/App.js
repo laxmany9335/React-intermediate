@@ -44,8 +44,8 @@ function App() {
             /> }/>
           <Route path ="contact" element ={<Contact/>}/>
 
-           <Route path = "login"  element = {<Login/>} />
-           <Route path = "/signup" element = {<SignUp/>} />
+           <Route path = "login"  element = {<Login setIsLoggedIn={setIsloggedIn}/>} />
+           <Route path = "/signup" element = {<SignUp setIsLoggedIn={setIsloggedIn}/>} />
            <Route path = "dashboard" element = {<Dashboard/>} />
         </Routes>
         <ToastContainer/>
