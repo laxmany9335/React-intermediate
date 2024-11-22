@@ -7,21 +7,21 @@ function Navbar(props) {
   let setIsloggedIn = props.setIsloggedIn;
 
   return (
-    <div className='flex justify-evenly bg-[#152561] text-2xl pt-3 pb-3 font-bold text-white'>
+    <div className='flex justify-around bg-[#152561] text-2xl pt-3 pb-3 text-white'>
           <Link to = "/">
                <img src= {logo} alt='Logo' width={160} height={32} loading='lazy' />
           </Link>
 
           <nav>
               
-              <ul className='flex  gap-4'>
-                 <li >
+              <ul className='flex gap-x-6'>
+                 <li className='hover:text-[#38BDF8] ml-3' >
                    <Link to = "/" > Home</Link>
                  </li>
-                 <li >
+                 <li className='hover:text-[#38BDF8] gap-3'>
                    <Link to = "/about" > About</Link>
                  </li>
-                 <li>
+                 <li className='hover:text-[#38BDF8] gap-3'>
                    <Link to = "/contact" > Contact</Link>
                  </li>
               </ul>
@@ -31,7 +31,7 @@ function Navbar(props) {
 
                    { !isLoggedIn &&
                     <Link to = "/login">
-                      <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2'>
+                      <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2'>
                         Login
                       </button>
                     </Link>
@@ -39,7 +39,7 @@ function Navbar(props) {
 
                     { !isLoggedIn &&
                     <Link to = "/signup"> 
-                    <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2'>
+                    <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2'>
                       Sign Up
                     </button>
                     </Link>
@@ -47,7 +47,7 @@ function Navbar(props) {
 
                     { isLoggedIn &&
                     <Link to = "/">
-                       <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2' onClick={()=>{
+                       <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2' onClick={()=>{
                           setIsloggedIn(false);
                           toast.success("Logged Out")
                           }}>
@@ -58,7 +58,7 @@ function Navbar(props) {
                    
                    { isLoggedIn &&
                     <Link to = "/dashboard">
-                      <button className='bg-black hover:bg-opacity-60 p-2 rounded-xl border-2'>
+                      <button className='bg-black hover:bg-[#008CBA] hover:bg-opacity-60 px-2 py-1 text-center rounded-xl border-2'>
                          Dashboard
                       </button>
                     </Link>
