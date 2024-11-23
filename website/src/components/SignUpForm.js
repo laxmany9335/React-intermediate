@@ -33,18 +33,18 @@ function SignUpForm({setIsLoggedIn}) {
   return (
     <div>
       {/* Role Selection */}
-      <div>
+      <div className=" flex">
         <button>Student</button>
         <button>Instructor</button>
       </div>
 
       {/* Form */}
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="flex flex-col w-full gap-y-4 mt-4">
         {/* Name Fields */}
-        <div>
-          <label>
-            <p>
-              First Name <sup>*</sup>
+        <div className=" flex flex-row gap-2">
+          <label className="w-full">
+            <p className="text-[0.875rem] text-[#ced2d9] mb-1 leading-[1.35rem]">
+              First Name <sup  className="text-[#f50505]">*</sup>
             </p>
             <input
               required
@@ -53,12 +53,13 @@ function SignUpForm({setIsLoggedIn}) {
               value={formData.firstName}
               onChange={changeHandler}
               placeholder="First Name"
+              className="bg-[#E8F0FE] w-full rounded-[0.5rem] text-black p-[10px]"
             />
           </label>
 
-          <label>
-            <p>
-              Last Name <sup>*</sup>
+          <label className ="w-full">
+            <p  className="text-[0.875rem] text-[#ced2d9] mb-1 leading-[1.35rem]">
+              Last Name <sup className = "text-[#f50505]">*</sup>
             </p>
             <input
               required
@@ -67,14 +68,15 @@ function SignUpForm({setIsLoggedIn}) {
               value={formData.lastName}
               onChange={changeHandler}
               placeholder="Last Name"
+              className="bg-[#E8F0FE] w-full rounded-[0.5rem] text-white p-[10px]"
             />
           </label>
         </div>
 
         {/* Email Field */}
-        <label>
-          <p>
-            Email <sup>*</sup>
+        <label w-full>
+          <p className = "text-[0.85rem] text-[#ced2d9] mb-1 leading-[1.35rem]">
+            Email <sup className = "text-[#f50505]">*</sup>
           </p>
           <input
             required
@@ -83,57 +85,65 @@ function SignUpForm({setIsLoggedIn}) {
             value={formData.email}
             onChange={changeHandler}
             placeholder="Create Email Username"
+            className="bg-[#E8F0FE] w-full rounded-[0.5rem] text-white p-[10px]"
           />
         </label>
 
         {/* Password Field */}
-        <label>
-          <p>
-            Create Password <sup>*</sup>
+         
+         <div className="flex gap-2">
+         <label className="w-full relative">
+          <p className="text-[0.875rem] text-[#ced2d9] mb-1 leading-[1.35rem]">
+            Create Password <sup className = "[#f50505]">*</sup>
           </p>
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div >
             <input
               required
               type={showPassword ? "text" : "password"}
               name="password"
               value={formData.password}
               onChange={changeHandler}
-              placeholder="Enter your Password"
+              placeholder="Enter new Password"
+                className="bg-[#E8F0FE] w-full rounded-[0.5rem] text-white p-[10px]"
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
-              style={{ cursor: "pointer", marginLeft: "10px" }}
+              className="absolute right-4 top-[42px] cursor-pointer"
             >
               {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
             </span>
           </div>
-        </label>
+         </label>
 
-        {/* Confirm Password Field */}
-        <label>
-          <p>
-            Confirm Password <sup>*</sup>
+        <label className = "w-full relative">
+          <p className="text-[0.875rem] text-[#ced2d9] mb-1 leading-[1.35rem]">
+            Confirm Password <sup className="text-[#f50505]">*</sup>
           </p>
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div>
             <input
               required
               type={showPassword ? "text" : "password"}
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={changeHandler}
-              placeholder="Confirm your Password"
+              placeholder="Confirm Password..."
+               className="bg-[#E8F0FE] w-full rounded-[0.5rem] text-white p-[10px]"
             />
             <span
               onClick={() => setShowPassword(!showPassword)}
-              style={{ cursor: "pointer", marginLeft: "10px" }}
+             className="absolute right-4 top-[42px] cursor-pointer"
             >
               {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
             </span>
           </div>
         </label>
 
+         </div>
+
         {/* Submit Button */}
-        <button>Create Account</button>
+        <button
+         className="bg-yellow-500 rounded-[8px] font-medium text-black-500 px-[12px] py-[8px]"
+        >Create Account</button>
       </form>
     </div>
   );
