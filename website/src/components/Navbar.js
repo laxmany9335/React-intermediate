@@ -7,7 +7,7 @@ function Navbar(props) {
   let setIsloggedIn = props.setIsloggedIn;
 
   return (
-    <div className='flex justify-around bg-[#152561] text-2xl pt-3 pb-3 text-white'>
+    <div className='flex justify-around bg-[#152561] text-xl pt-3 pb-3 text-white'>
           <Link to = "/">
                <img src= {logo} alt='Logo' width={160} height={32} loading='lazy' />
           </Link>
@@ -31,15 +31,14 @@ function Navbar(props) {
 
                    { !isLoggedIn &&
                     <Link to = "/login">
-                      <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2'>
-                        Login
+                      <button className="bg-white hover:bg-[#008CBA] hover:bg-opacity-60 text-black text-xl hover:text-white px-2 text-center rounded-3xl border-2">                        Login
                       </button>
                     </Link>
                    }
 
                     { !isLoggedIn &&
                     <Link to = "/signup"> 
-                    <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2'>
+                    <button className="bg-white hover:bg-[#008CBA] hover:bg-opacity-60 text-black text-xl hover:text-white px-2 text-center rounded-3xl border-2">
                       Sign up
                     </button>
                     </Link>
@@ -47,7 +46,7 @@ function Navbar(props) {
 
                     { isLoggedIn &&
                     <Link to = "/">
-                       <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2' onClick={()=>{
+                       <button className="bg-white hover:bg-[#008CBA] hover:bg-opacity-60 text-black text-xl hover:text-white px-2 text-center rounded-3xl border-2" onClick={()=>{
                           setIsloggedIn(false);
                           toast.success("Logged Out")
                           }}>
@@ -58,7 +57,7 @@ function Navbar(props) {
                    
                    { isLoggedIn &&
                     <Link to = "/dashboard">
-                      <button className='bg-black hover:bg-[#008CBA] text-xl hover:bg-opacity-60 px-1 py-1 text-center rounded-xl border-2'>
+                      <button className="bg-white hover:bg-[#008CBA] hover:bg-opacity-60 text-black text-xl hover:text-white px-2 text-center rounded-3xl border-2">
                          Dashboard
                       </button>
                     </Link>

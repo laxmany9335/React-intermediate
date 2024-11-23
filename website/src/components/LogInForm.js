@@ -20,7 +20,7 @@ function LogInForm({ setIsLoggedIn = () => {} }) {
     event.preventDefault();
     toast.success("Logged In", { autoClose: 3000 });
     setIsLoggedIn(true);
-    navigate("/");
+    navigate("/dashboard");
   }
 
   return (
